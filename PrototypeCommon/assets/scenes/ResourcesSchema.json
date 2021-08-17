@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$id": "ResourcesSchema.json",
+
+  "title": "Resources",
+  "description": "A prototype engine resources file",
+  "type": "object",
+  "properties": {
+    "meshes": {
+      "description": "the geometries with their corresponding files",
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "description": "the type of the geometry",
+              "type": "string"
+            },
+            "path": {
+              "description": "the relative path of the mesh",
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "shaders": {
+      "description": "the name of the shaders to be loaded and compiled at startup",
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "textures": {
+      "description": "the relative path and name of the textures to be loaded at startup",
+      "type": "array",
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "materials": {
+      "description": "the materials to be created for use in the scene",
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "the unique name of the material",
+              "type": "string"
+            },
+            "shader": {
+              "description": "the name of the shader used by the material",
+              "type": "string"
+            },
+            "textures": {
+              "description": "the associated textures according to the shader definition (uniform samplers)",
+              "type": "array",
+              "items": [
+                {
+                  "description": "the name of the texture",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "framebuffers": {
+      "description": "the framebuffers to be created for use in the scene",
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "the unique name of the framebuffer",
+              "type": "string"
+            },
+            "shader": {
+              "description": "the unique name of the used shader",
+              "type": "string"
+            },
+            "numColorAttachments": {
+              "description": "the number of color attachments used by the framebuffer",
+              "type": "number"
+            },
+            "withDepthAttachment": {
+              "description": "if depth attachment is needed",
+              "type": "boolean"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": ["meshes", "shaders", "textures", "materials", "framebuffers"]
+}

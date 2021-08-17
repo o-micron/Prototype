@@ -1,0 +1,79 @@
+{
+    "version": 2,
+    "configurePresets": [
+        {
+            "name": "x64-Debug",
+            "displayName": "Visual Studio Community 2019 Debug - amd64",
+            "description": "Visual Studio 16 2019 (x64)",
+            "generator": "Visual Studio 16 2019",
+            "architecture": {
+                "strategy": "set",
+                "value": "x64"
+            },
+            "toolset": "host=x64",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/build/${presetName}/install"
+            },
+            "vendor": {
+                "microsoft.com/VisualStudioSettings/CMake/1.0": {
+                    "intelliSenseMode": "windows-clang-x64"
+                }
+            },
+            "environment": {
+                "LLVM_CONFIG_PATH": "${sourceDir}/PrototypeCompiler/llvm-project/build/Debug/bin/llvm-config"
+            }
+        },
+        {
+            "name": "x64-Release",
+            "displayName": "Visual Studio Community 2019 Release - amd64",
+            "description": "Visual Studio 16 2019 (x64)",
+            "generator": "Visual Studio 16 2019",
+            "architecture": {
+                "strategy": "set",
+                "value": "x64"
+            },
+            "toolset": "host=x64",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/build/${presetName}/install"
+            },
+            "vendor": {
+                "microsoft.com/VisualStudioSettings/CMake/1.0": {
+                    "intelliSenseMode": "windows-clang-x64"
+                }
+            },
+            "environment": {
+                "LLVM_CONFIG_PATH": "${sourceDir}/PrototypeCompiler/llvm-project/build/Release/bin/llvm-config"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "x64-Debug",
+            "description": "",
+            "displayName": "",
+            "configurePreset": "x64-Debug",
+            "targets": [
+                "PrototypeApplication"
+            ],
+            "verbose": true,
+            "inheritConfigureEnvironment": true,
+            "configuration": "Debug"
+        },
+        {
+            "name": "x64-Release",
+            "description": "",
+            "displayName": "",
+            "configurePreset": "x64-Release",
+            "targets": [
+                "PrototypeApplication"
+            ],
+            "verbose": true,
+            "inheritConfigureEnvironment": true,
+            "configuration": "Release"
+        }
+    ]
+}

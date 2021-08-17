@@ -1,0 +1,84 @@
+{
+  "name": "Stalingrad",
+  "bundles": [
+    {
+      "path": "stalingrad/stalingrad.glb",
+      "loaded": {}
+    }
+  ],
+  "filters": [
+    {
+      "traits": ["Script"]
+    },
+    {
+      "traits": ["Transform", "MeshRenderer"]
+    },
+    {
+      "traits": ["Camera"]
+    },
+    {
+      "traits": ["Transform", "Collider", "Rigidbody"]
+    },
+    {
+      "traits": ["VehicleChasis", "Transform"]
+    }
+  ],
+  "layers": [
+    {
+      "name": "default",
+      "nodes": [
+        {
+          "name": "MainCamera",
+          "components": [
+            {
+              "name": "Camera",
+              "fov": 60.0,
+              "near": 1.0,
+              "far": 1000.0,
+              "lookSensitivity": 0.025,
+              "moveSensitivity": 0.25,
+              "position": [118.725, 69.022, 63.333],
+              "rotation": [-19.65, 56.754],
+              "orbital": false
+            }
+          ],
+          "nodes": []
+        },
+        {
+          "name": "SceneCamera",
+          "components": [
+            {
+              "name": "Camera",
+              "fov": 60.0,
+              "near": 1.0,
+              "far": 1000.0,
+              "lookSensitivity": 0.025,
+              "moveSensitivity": 0.25,
+              "position": [118.725, 69.022, 63.333],
+              "rotation": [-19.65, 56.754],
+              "orbital": false
+            }
+          ],
+          "nodes": []
+        },
+        {
+          "name": "PaintCamera",
+          "components": [
+            {
+              "name": "Camera",
+              "fov": 60.0,
+              "near": 1.0,
+              "far": 1000.0,
+              "lookSensitivity": 0.025,
+              "moveSensitivity": 0.25,
+              "position": [118.725, 69.022, 63.333],
+              "rotation": [-19.65, 56.754],
+              "orbital": false
+            }
+          ],
+          "nodes": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.5.17",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Cloth_Cloth_0"
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                0.2064993977546692,
+                0.2064993977546692,
+                0.2064993977546692
+            ],
+            "emissiveTexture" : {
+                "index" : 0
+            },
+            "name" : "Cloth",
+            "normalTexture" : {
+                "index" : 1
+            },
+            "occlusionTexture" : {
+                "index" : 2
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 3
+                },
+                "metallicFactor" : -3.725290298461914e-09,
+                "metallicRoughnessTexture" : {
+                    "index" : 2
+                }
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cloth_Cloth_0",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2,
+                        "TEXCOORD_1" : 3
+                    },
+                    "indices" : 4,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        },
+        {
+            "sampler" : 0,
+            "source" : 1
+        },
+        {
+            "sampler" : 0,
+            "source" : 2
+        },
+        {
+            "sampler" : 0,
+            "source" : 0
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/png",
+            "name" : "Cloth/Cloth_baseColor",
+            "uri" : "Cloth/Cloth_baseColor.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "Cloth/Cloth_normal",
+            "uri" : "Cloth/Cloth_normal.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "Cloth/Cloth_metallicRoughness",
+            "uri" : "Cloth/Cloth_metallicRoughness.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 16641,
+            "max" : [
+                1.4702390432357788,
+                1.028799057006836,
+                1.4131100177764893
+            ],
+            "min" : [
+                -1.4712740182876587,
+                -2.626466989517212,
+                -1.4359409809112549
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 16641,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 16641,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 16641,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5123,
+            "count" : 98304,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 199692,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 199692,
+            "byteOffset" : 199692
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 133128,
+            "byteOffset" : 399384
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 133128,
+            "byteOffset" : 532512
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 196608,
+            "byteOffset" : 665640
+        }
+    ],
+    "samplers" : [
+        {
+            "magFilter" : 9729,
+            "minFilter" : 9987
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 862248,
+            "uri" : "cloth.bin"
+        }
+    ]
+}

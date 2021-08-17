@@ -1,0 +1,43 @@
+cmake_minimum_required(VERSION 3.1)
+project(PrototypePlugins VERSION 0.1.0)
+set(CMAKE_SUPPRESS_REGENERATION TRUE)
+
+add_custom_target(PrototypePlugins
+        WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+        VERBATIM
+)
+
+MACRO(SUBDIRLIST result curdir)
+  FILE(GLOB children RELATIVE ${curdir} ${curdir}/*)
+  SET(dirlist "")
+  FOREACH(child ${children})
+    IF(IS_DIRECTORY ${curdir}/${child})
+      LIST(APPEND dirlist ${child})
+    ENDIF()
+  ENDFOREACH()
+  SET(${result} ${dirlist})
+ENDMACRO()
+
+ SUBDIRLIST(PROTOTYPE_CPP_PLUGINS_LIST ${CMAKE_SOURCE_DIR}/PrototypePlugins/Cpp)
+ list(LENGTH PROTOTYPE_CPP_PLUGINS_LIST PROTOTYPE_CPP_PLUGINS_LIST_LEN)
+ math(EXPR PROTOTYPE_CPP_PLUGINS_LIST_LEN_RANGE "${PROTOTYPE_CPP_PLUGINS_LIST_LEN} - 1")
+ foreach(PROTOTYPE_CPP_PLUGIN_INDEX RANGE ${PROTOTYPE_CPP_PLUGINS_LIST_LEN_RANGE})
+     list(GET PROTOTYPE_CPP_PLUGINS_LIST ${PROTOTYPE_CPP_PLUGIN_INDEX} PROTOTYPE_CPP_PLUGIN_NAME)
+     message("-- Adding Cpp Plugin " ${PROTOTYPE_CPP_PLUGIN_NAME})
+     if(WIN32)
+       add_subdirectory(Cpp/${PROTOTYPE_CPP_PLUGIN_NAME}/cmake/windows)
+     elseif(UNIX AND NOT APPLE)
+       add_subdirectory(Cpp/${PROTOTYPE_CPP_PLUGIN_NAME}/cmake/linux)
+     endif()
+     add_dependencies(PrototypePlugins ${PROTOTYPE_CPP_PLUGIN_NAME})
+ endforeach()
+
+ SUBDIRLIST(PROTOTYPE_RUST_PLUGINS_LIST ${CMAKE_SOURCE_DIR}/PrototypePlugins/Rust)
+ list(LENGTH PROTOTYPE_RUST_PLUGINS_LIST PROTOTYPE_RUST_PLUGINS_LIST_LEN)
+ math(EXPR PROTOTYPE_RUST_PLUGINS_LIST_LEN_RANGE "${PROTOTYPE_RUST_PLUGINS_LIST_LEN} - 1")
+ foreach(PROTOTYPE_RUST_PLUGIN_INDEX RANGE ${PROTOTYPE_RUST_PLUGINS_LIST_LEN_RANGE})
+     list(GET PROTOTYPE_RUST_PLUGINS_LIST ${PROTOTYPE_RUST_PLUGIN_INDEX} PROTOTYPE_RUST_PLUGIN_NAME)
+     message("-- Adding Rust Plugin " ${PROTOTYPE_RUST_PLUGIN_NAME})
+     add_subdirectory(Rust/${PROTOTYPE_RUST_PLUGIN_NAME})
+     add_dependencies(PrototypePlugins ${PROTOTYPE_RUST_PLUGIN_NAME})
+ endforeach()

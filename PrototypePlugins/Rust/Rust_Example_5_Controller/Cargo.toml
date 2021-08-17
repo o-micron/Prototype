@@ -1,0 +1,20 @@
+[package]
+name = "Rust_Example_5_Controller"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+libc = "0.2"
+lazy_static = "1.4.0"
+path-slash = "0.1.4"
+
+[build-dependencies]
+bindgen = "0.53.1"
+
+[build]
+target = "stable-x86_64-pc-windows-msvc"

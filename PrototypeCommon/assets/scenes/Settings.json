@@ -1,0 +1,42 @@
+{
+  "DefaultScene": "Empty",
+  "DefaultRenderingApi": "OPENGL4_1",
+  "DefaultPhysicsApi": "PHYSX",
+  "Resources": {
+    "OPENGL4_1": "Resources_Opengl.json",
+    "OPENGLES_3_0": "Resources_Opengl.json",
+    "VULKAN_1": "Resources_Vulkan.json"
+  },
+  "Scenes": [
+    {
+      "name": "Cloth.json",
+      "RenderingApis": ["OPENGLES_3_0"],
+      "PhysicsApis": ["BULLET", "PHYSX"]
+    },
+    {
+      "name": "Stalingrad.json",
+      "RenderingApis": ["OPENGLES_3_0", "OPENGL4_1"],
+      "PhysicsApis": ["BULLET", "PHYSX"]
+    },
+    {
+      "name": "Empty.json",
+      "RenderingApis": ["OPENGLES_3_0", "OPENGL4_1"],
+      "PhysicsApis": ["BULLET", "PHYSX"]
+    },
+    {
+      "name": "Game.json",
+      "RenderingApis": ["OPENGLES_3_0", "OPENGL4_1"],
+      "PhysicsApis": ["BULLET", "PHYSX"]
+    },
+    {
+      "name": "Raytracing2.json",
+      "RenderingApis": ["VULKAN_1"],
+      "PhysicsApis": ["BULLET", "PHYSX"]
+    },
+    {
+      "name": "AirTags.json",
+      "RenderingApis": ["OPENGLES_3_0", "OPENGL4_1"],
+      "PhysicsApis": ["BULLET", "PHYSX"]
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "name": "Cloth",
+  "bundles": [
+    {
+      "path": "cloth/cloth.gltf",
+      "loaded": {
+        "colliders": "ColliderShape_ConvexMesh",
+        "isStatic": true
+      }
+    }
+  ],
+  "filters": [
+    {
+      "traits": ["Script"]
+    },
+    {
+      "traits": ["Transform", "MeshRenderer"]
+    },
+    {
+      "traits": ["Camera"]
+    },
+    {
+      "traits": ["Transform", "Collider", "Rigidbody"]
+    },
+    {
+      "traits": ["VehicleChasis", "Transform"]
+    }
+  ],
+  "layers": [
+    {
+      "name": "default",
+      "nodes": [
+        {
+          "name": "MainCamera",
+          "components": [
+            {
+              "name": "Camera",
+              "fov": 60.0,
+              "near": 0.01,
+              "far": 1000.0,
+              "lookSensitivity": 0.025,
+              "moveSensitivity": 0.25,
+              "position": [0.0, 0.0, 7.0],
+              "rotation": [0.0, 0.0],
+              "orbital": false
+            }
+          ],
+          "nodes": []
+        },
+        {
+          "name": "SceneCamera",
+          "components": [
+            {
+              "name": "Camera",
+              "fov": 60.0,
+              "near": 0.01,
+              "far": 1000.0,
+              "lookSensitivity": 0.025,
+              "moveSensitivity": 0.25,
+              "position": [0.0, 0.0, 7.0],
+              "rotation": [0.0, 0.0],
+              "orbital": false
+            }
+          ],
+          "nodes": []
+        },
+        {
+          "name": "PaintCamera",
+          "components": [
+            {
+              "name": "Camera",
+              "fov": 50.0,
+              "near": 0.01,
+              "far": 100.0,
+              "lookSensitivity": 0.025,
+              "moveSensitivity": 0.25,
+              "position": [0.0, 0.0, 7.0],
+              "rotation": [0.0, 0.0],
+              "orbital": true
+            }
+          ],
+          "nodes": []
+        },
+        {
+          "name": "Ground",
+          "components": [
+            {
+              "name": "Transform",
+              "position": [0.0, -15.0, 0.0],
+              "rotation": [0.0, 0.0, 0.0],
+              "scale": [100.0, 1.0, 100.0]
+            },
+            {
+              "name": "MeshRenderer",
+              "data": [
+                {
+                  "mesh": "CUBE",
+                  "material": "default"
+                }
+              ]
+            },
+            {
+              "name": "Collider",
+              "nameRef": "CUBE",
+              "shapeType": "ColliderShape_Box",
+              "width": 1.0,
+              "height": 1.0,
+              "depth": 1.0
+            },
+            {
+              "name": "Rigidbody",
+              "static": true
+            }
+          ],
+          "nodes": []
+        }
+      ]
+    }
+  ]
+}

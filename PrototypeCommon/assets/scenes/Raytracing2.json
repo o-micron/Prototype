@@ -1,0 +1,242 @@
+{
+  "name": "Raytracing2",
+  "bundles": [],
+  "filters": [
+    {
+      "traits": ["Script"]
+    },
+    {
+      "traits": ["Transform", "MeshRenderer"]
+    },
+    {
+      "traits": ["Camera"]
+    },
+    {
+      "traits": ["Transform", "Collider", "Rigidbody"]
+    },
+    {
+      "traits": ["VehicleChasis", "Transform"]
+    }
+  ],
+  "layers": [
+    {
+      "name": "hidden",
+      "nodes": []
+    },
+    {
+      "name": "default",
+      "nodes": [
+        {
+          "name": "MainCamera",
+          "components": [
+            {
+              "name": "Camera",
+              "fov": 60.0,
+              "near": 0.01,
+              "far": 1000.0,
+              "lookSensitivity": 0.025,
+              "moveSensitivity": 0.25,
+              "position": [0.0, 30.0, 35.0],
+              "rotation": [0.0, 0.0],
+              "orbital": false
+            }
+          ],
+          "nodes": []
+        },
+        {
+          "name": "SceneCamera",
+          "components": [
+            {
+              "name": "Camera",
+              "fov": 60.0,
+              "near": 0.01,
+              "far": 1000.0,
+              "lookSensitivity": 0.025,
+              "moveSensitivity": 0.25,
+              "position": [0.0, 0.0, 7.0],
+              "rotation": [0.0, 0.0],
+              "orbital": false
+            }
+          ],
+          "nodes": []
+        },
+        {
+          "name": "PaintCamera",
+          "components": [
+            {
+              "name": "Camera",
+              "fov": 50.0,
+              "near": 0.01,
+              "far": 100.0,
+              "lookSensitivity": 0.025,
+              "moveSensitivity": 0.25,
+              "position": [0.0, 0.0, 7.0],
+              "rotation": [0.0, 0.0],
+              "orbital": true
+            }
+          ],
+          "nodes": []
+        },
+        {
+          "name": "Ground",
+          "components": [
+            {
+              "name": "Transform",
+              "position": [0.0, -1.0, 0.0],
+              "rotation": [0.0, 0.0, 0.0],
+              "scale": [400.0, 1.0, 400.0]
+            },
+            {
+              "name": "MeshRenderer",
+              "data": [
+                {
+                  "mesh": "CUBE",
+                  "material": "default"
+                }
+              ]
+            },
+            {
+              "name": "Collider",
+              "nameRef": "CUBE",
+              "shapeType": "ColliderShape_Box",
+              "width": 1.0,
+              "height": 1.0,
+              "depth": 1.0
+            },
+            {
+              "name": "Rigidbody",
+              "static": true
+            }
+          ],
+          "nodes": []
+        },
+        {
+          "name": "C",
+          "components": [
+            {
+              "name": "Transform",
+              "position": [10.0, 5.0, 0.0],
+              "rotation": [0.0, 0.0, 0.0],
+              "scale": [1.0, 1.0, 1.0]
+            },
+            {
+              "name": "MeshRenderer",
+              "data": [
+                {
+                  "mesh": "sphere.obj",
+                  "material": "default"
+                }
+              ]
+            },
+            {
+              "name": "Collider",
+              "nameRef": "sphere.obj",
+              "shapeType": "ColliderShape_Sphere",
+              "radius": 1.0
+            },
+            {
+              "name": "Rigidbody"
+            }
+          ],
+          "nodes": []
+        },
+        {
+          "name": "D",
+          "components": [
+            {
+              "name": "Transform",
+              "position": [-10.0, 10.0, -5.0],
+              "rotation": [0.0, 0.0, 0.0],
+              "scale": [1.0, 1.0, 1.0]
+            },
+            {
+              "name": "MeshRenderer",
+              "data": [
+                {
+                  "mesh": "CUBE",
+                  "material": "default"
+                }
+              ]
+            },
+            {
+              "name": "Collider",
+              "nameRef": "CUBE",
+              "shapeType": "ColliderShape_Box",
+              "width": 1.0,
+              "height": 1.0,
+              "depth": 1.0
+            },
+            {
+              "name": "Rigidbody"
+            }
+          ],
+          "nodes": []
+        },
+        {
+          "name": "E",
+          "components": [
+            {
+              "name": "Transform",
+              "position": [10.0, 15.0, 0.0],
+              "rotation": [0.0, 0.0, 0.0],
+              "scale": [1.0, 1.0, 1.0]
+            },
+            {
+              "name": "MeshRenderer",
+              "data": [
+                {
+                  "mesh": "ico.obj",
+                  "material": "default"
+                }
+              ]
+            },
+            {
+              "name": "Collider",
+              "nameRef": "ico.obj",
+              "shapeType": "ColliderShape_ConvexMesh",
+              "width": 1.0,
+              "height": 1.0,
+              "depth": 1.0
+            },
+            {
+              "name": "Rigidbody"
+            }
+          ],
+          "nodes": []
+        },
+        {
+          "name": "S0",
+          "components": [
+            {
+              "name": "Transform",
+              "position": [-15.0, 15.0, -10.0],
+              "rotation": [0.0, 0.0, 0.0],
+              "scale": [1.0, 1.0, 1.0]
+            },
+            {
+              "name": "MeshRenderer",
+              "data": [
+                {
+                  "mesh": "monkey.obj",
+                  "material": "default"
+                }
+              ]
+            },
+            {
+              "name": "Collider",
+              "nameRef": "monkey.obj",
+              "shapeType": "ColliderShape_ConvexMesh",
+              "width": 1.0,
+              "height": 1.0,
+              "depth": 1.0
+            },
+            {
+              "name": "Rigidbody"
+            }
+          ],
+          "nodes": []
+        }
+      ]
+    }
+  ]
+}

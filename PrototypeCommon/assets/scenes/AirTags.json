@@ -1,0 +1,222 @@
+{
+  "name": "AirTags",
+  "bundles": [
+    {
+      "path": "iphone/scene.glb"
+    },
+    {
+      "path": "airtag/scene.glb"
+    }
+  ],
+  "filters": [
+    {
+      "traits": ["Script"]
+    },
+    {
+      "traits": ["Transform", "MeshRenderer"]
+    },
+    {
+      "traits": ["Camera"]
+    },
+    {
+      "traits": ["Transform", "Collider", "Rigidbody"]
+    },
+    {
+      "traits": ["VehicleChasis", "Transform"]
+    }
+  ],
+  "layers": [
+    {
+      "name": "default",
+      "nodes": [
+        {
+          "name": "MainCamera",
+          "components": [
+            {
+              "name": "Camera",
+              "fov": 60.0,
+              "near": 0.01,
+              "far": 1000.0,
+              "lookSensitivity": 0.01,
+              "moveSensitivity": 0.1,
+              "position": [0.0, 0.0, 7.0],
+              "rotation": [0.0, 0.0],
+              "orbital": false
+            }
+          ],
+          "nodes": []
+        },
+        {
+          "name": "SceneCamera",
+          "components": [
+            {
+              "name": "Camera",
+              "fov": 60.0,
+              "near": 0.01,
+              "far": 1000.0,
+              "lookSensitivity": 0.01,
+              "moveSensitivity": 0.1,
+              "position": [0.0, 0.0, 7.0],
+              "rotation": [0.0, 0.0],
+              "orbital": false
+            }
+          ],
+          "nodes": []
+        },
+        {
+          "name": "PaintCamera",
+          "components": [
+            {
+              "name": "Camera",
+              "fov": 50.0,
+              "near": 0.01,
+              "far": 100.0,
+              "lookSensitivity": 0.01,
+              "moveSensitivity": 0.1,
+              "position": [0.0, 0.0, 7.0],
+              "rotation": [0.0, 0.0],
+              "orbital": true
+            }
+          ],
+          "nodes": []
+        },
+        {
+          "name": "AirTagA",
+          "components": [
+            {
+              "name": "Transform",
+              "position": [-1.0, 0.0, -1.0],
+              "rotation": [0.0, 0.0, 0.0],
+              "scale": [1.0, 1.0, 1.0]
+            },
+            {
+              "name": "MeshRenderer",
+              "data": [
+                {
+                  "mesh": "airtag/scene.glb/AirTag",
+                  "material": "AirTagMat"
+                }
+              ]
+            },
+            {
+              "name": "Collider",
+              "nameRef": "airtag/scene.glb/AirTag",
+              "shapeType": "ColliderShape_ConvexMesh"
+            },
+            {
+              "name": "Rigidbody",
+              "lockLinearX": true,
+              "lockLinearY": true,
+              "lockLinearZ": true,
+              "lockAngularX": true,
+              "lockAngularY": true,
+              "lockAngularZ": true
+            }
+          ],
+          "nodes": []
+        },
+        {
+          "name": "AirTagB",
+          "components": [
+            {
+              "name": "Transform",
+              "position": [0.0, 0.0, -1.0],
+              "rotation": [0.0, 0.0, 0.0],
+              "scale": [1.0, 1.0, 1.0]
+            },
+            {
+              "name": "MeshRenderer",
+              "data": [
+                {
+                  "mesh": "airtag/scene.glb/AirTag",
+                  "material": "AirTagMat"
+                }
+              ]
+            },
+            {
+              "name": "Collider",
+              "nameRef": "airtag/scene.glb/AirTag",
+              "shapeType": "ColliderShape_ConvexMesh"
+            },
+            {
+              "name": "Rigidbody",
+              "static": true,
+              "trigger": true
+            }
+          ],
+          "nodes": []
+        },
+        {
+          "name": "AirTagC",
+          "components": [
+            {
+              "name": "Transform",
+              "position": [1.0, 0.0, -1.0],
+              "rotation": [0.0, 0.0, 0.0],
+              "scale": [1.0, 1.0, 1.0]
+            },
+            {
+              "name": "MeshRenderer",
+              "data": [
+                {
+                  "mesh": "airtag/scene.glb/AirTag",
+                  "material": "AirTagMat"
+                }
+              ]
+            },
+            {
+              "name": "Collider",
+              "nameRef": "airtag/scene.glb/AirTag",
+              "shapeType": "ColliderShape_ConvexMesh"
+            },
+            {
+              "name": "Rigidbody",
+              "lockLinearX": true,
+              "lockLinearY": true,
+              "lockLinearZ": true,
+              "lockAngularX": true,
+              "lockAngularY": true,
+              "lockAngularZ": true
+            }
+          ],
+          "nodes": []
+        },
+        {
+          "name": "IPhoneA",
+          "components": [
+            {
+              "name": "Transform",
+              "position": [0.0, 3.0, -1.0],
+              "rotation": [180.0, 90.0, 0.0],
+              "scale": [1.0, 1.0, 1.0]
+            },
+            {
+              "name": "MeshRenderer",
+              "data": [
+                {
+                  "mesh": "iphone/scene.glb/iphone",
+                  "material": "IPhoneMat"
+                }
+              ]
+            },
+            {
+              "name": "Collider",
+              "nameRef": "iphone/scene.glb/iphone",
+              "shapeType": "ColliderShape_ConvexMesh"
+            },
+            {
+              "name": "Rigidbody",
+              "lockLinearX": true,
+              "lockLinearY": true,
+              "lockLinearZ": true,
+              "lockAngularX": true,
+              "lockAngularY": true,
+              "lockAngularZ": true
+            }
+          ],
+          "nodes": []
+        }
+      ]
+    }
+  ]
+}

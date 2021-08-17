@@ -1,0 +1,186 @@
+{
+  "framebuffers": [
+    {
+      "name": "fullscreen",
+      "shader": "fullscreen",
+      "numColorAttachments": 1,
+      "withDepthAttachment": false
+    },
+    {
+      "name": "forward",
+      "shader": "forward",
+      "numColorAttachments": 1,
+      "withDepthAttachment": false
+    },
+    {
+      "name": "deferred",
+      "shader": "deferred",
+      "numColorAttachments": 5,
+      "withDepthAttachment": true
+    },
+    {
+      "name": "gbuffer",
+      "shader": "gbuffer",
+      "numColorAttachments": 1,
+      "withDepthAttachment": false
+    },
+    {
+      "name": "postprocessing",
+      "shader": "postprocessing",
+      "numColorAttachments": 1,
+      "withDepthAttachment": false
+    },
+    {
+      "name": "final",
+      "shader": "final",
+      "numColorAttachments": 1,
+      "withDepthAttachment": false
+    }
+  ],
+  "meshes": [
+    {
+      "type": "Triangles",
+      "path": "capsule.obj"
+    },
+    {
+      "type": "Triangles",
+      "path": "cylinder.obj"
+    },
+    {
+      "type": "Triangles",
+      "path": "monkey.obj"
+    },
+    {
+      "type": "Triangles",
+      "path": "sphere.obj"
+    },
+    {
+      "type": "Triangles",
+      "path": "ico.obj"
+    }
+  ],
+  "shaders": [
+    "brdf",
+    "color",
+    "default",
+    "deferred",
+    "depthMap",
+    "final",
+    "forward",
+    "fullscreen",
+    "gbuffer",
+    "hdr",
+    "irradiance",
+    "postprocessing",
+    "pbr",
+    "prefilter",
+    "sky"
+  ],
+  "textures": [
+    "default.jpg",
+    "CubeGridTex.png",
+    "Metal01/color.jpg",
+    "Metal01/normal.jpg",
+    "Metal01/metallic.jpg",
+    "Metal01/roughness.jpg",
+    "Kenny/Dark/texture_08.png",
+    "Kenny/Dark/texture_12.png",
+    "Kenny/Green/texture_09.png",
+    "Kenny/Green/texture_13.png",
+    "Kenny/Light/texture_07.png",
+    "Kenny/Light/texture_11.png",
+    "Kenny/Orange/texture_09.png",
+    "Kenny/Orange/texture_13.png",
+    "Kenny/Purple/texture_09.png",
+    "Kenny/Purple/texture_13.png",
+    "Kenny/Red/texture_09.png",
+    "Kenny/Red/texture_13.png",
+    "icons/play.png",
+    "icons/pause.png",
+    "icons/reload.png",
+    "icons/import.png",
+    "icons/export.png",
+    "white.png",
+    "black.png",
+    "airtag/color.png",
+    "airtag/metallic.png",
+    "airtag/roughness.png",
+    "airtag/normal.png",
+    "iphone/color.png",
+    "iphone/metallic.png",
+    "iphone/roughness.png",
+    "iphone/normal.png"
+  ],
+  "materials": [
+    {
+      "name": "default",
+      "shader": "pbr",
+      "textures": [
+        "default.jpg",
+        "Metal01/metallic.jpg",
+        "Metal01/normal.jpg",
+        "Metal01/roughness.jpg"
+      ]
+    },
+    {
+      "name": "Metal01",
+      "shader": "pbr",
+      "textures": [
+        "Metal01/color.jpg",
+        "Metal01/metallic.jpg",
+        "Metal01/normal.jpg",
+        "Metal01/roughness.jpg"
+      ]
+    },
+    {
+      "name": "KennyDark",
+      "shader": "default",
+      "textures": ["Kenny/Dark/texture_08.png", "Kenny/Dark/texture_12.png"]
+    },
+    {
+      "name": "KennyGreen",
+      "shader": "default",
+      "textures": ["Kenny/Green/texture_09.png", "Kenny/Green/texture_13.png"]
+    },
+    {
+      "name": "KennyLight",
+      "shader": "default",
+      "textures": ["Kenny/Light/texture_07.png", "Kenny/Light/texture_11.png"]
+    },
+    {
+      "name": "KennyOrange",
+      "shader": "default",
+      "textures": ["Kenny/Orange/texture_09.png", "Kenny/Orange/texture_13.png"]
+    },
+    {
+      "name": "KennyPurple",
+      "shader": "default",
+      "textures": ["Kenny/Purple/texture_09.png", "Kenny/Purple/texture_13.png"]
+    },
+    {
+      "name": "KennyRed",
+      "shader": "default",
+      "textures": ["Kenny/Red/texture_09.png", "Kenny/Red/texture_13.png"]
+    },
+    {
+      "name": "GroundMat",
+      "shader": "default",
+      "textures": ["CubeGridTex.png", "CubeGridTex.png"]
+    },
+    {
+      "name": "IPhoneMat",
+      "shader": "pbr",
+      "textures": [
+        "iphone/color.png",
+        "iphone/metallic.png",
+        "iphone/normal.png",
+        "iphone/roughness.png"
+      ]
+    },
+    {
+      "name": "AirTagMat",
+      "shader": "color",
+      "textures": ["airtag/color.png"]
+    }
+  ]
+}

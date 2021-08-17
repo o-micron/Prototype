@@ -1,0 +1,276 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$id": "SceneSchema.json",
+
+  "traits": {
+    "$id": "traits",
+    "Camera": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "fov": { "type": "number" },
+        "near": { "type": "number" },
+        "far": { "type": "number" },
+        "lookSensitivity": { "type": "number" },
+        "moveSensitivity": { "type": "number" },
+        "position": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": [
+            {
+              "description": "xyz of the translation",
+              "type": "number"
+            }
+          ]
+        },
+        "rotation": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": [
+            {
+              "description": "xy of the euler angles rotation no z rotation ...",
+              "type": "number"
+            }
+          ]
+        },
+        "orbital": { "type": "boolean" }
+      },
+      "required": [
+        "name",
+        "fov",
+        "near",
+        "far",
+        "lookSensitivity",
+        "moveSensitivity",
+        "position",
+        "rotation",
+        "orbital"
+      ]
+    },
+    "Collider": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "nameRef": { "type": "string" },
+        "shapeType": { "type": "string" },
+        "width": { "type": "number" },
+        "height": { "type": "number" },
+        "depth": { "type": "number" }
+      },
+      "required": ["name", "nameRef", "shapeType", "width", "height", "depth"]
+    },
+    "MeshRenderer": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "mesh": { "type": "string" },
+        "material": { "type": "string" }
+      },
+      "required": ["name", "mesh", "material"]
+    },
+    "Rigidbody": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "linearVelocity": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": [
+            {
+              "description": "xyz of the linear velocity of the rigidbody",
+              "type": "number"
+            }
+          ]
+        },
+        "linearDamping": { "type": "number" },
+        "angularVelocity": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": [
+            {
+              "description": "xyz of the angular velocity of the rigidbody",
+              "type": "number"
+            }
+          ]
+        },
+        "angularDamping": { "type": "number" },
+        "mass": { "type": "number" },
+        "lockLinearX": { "type": "boolean" },
+        "lockLinearY": { "type": "boolean" },
+        "lockLinearZ": { "type": "boolean" },
+        "lockAngularX": { "type": "boolean" },
+        "lockAngularY": { "type": "boolean" },
+        "lockAngularZ": { "type": "boolean" },
+        "static": { "type": "boolean" },
+        "trigger": { "type": "boolean" }
+      },
+      "required": ["name"]
+    },
+    "Script": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" }
+      },
+      "required": ["name", "static"]
+    },
+    "Transform": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "position": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": [
+            {
+              "description": "xyz of the translation",
+              "type": "number"
+            }
+          ]
+        },
+        "rotation": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": [
+            {
+              "description": "xyz of the euler angles rotation",
+              "type": "number"
+            }
+          ]
+        },
+        "scale": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": [
+            {
+              "description": "xyz scale",
+              "type": "number"
+            }
+          ]
+        }
+      },
+      "required": ["name", "position", "rotation", "scale"]
+    }
+  },
+
+  "title": "Scene",
+  "description": "A prototype engine scene",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "The name of the scene",
+      "type": "string"
+    },
+    "bundles": {
+      "description": "array of gltf files containing whole scenes",
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "path": {
+              "description": "the relative bundle path of the gltf file",
+              "type": "string"
+            },
+            "loaded": {
+              "description": "object describing loading process and settings",
+              "type": "object",
+              "properties": {
+                "colliders": {
+                  "description": "load physics colliders as 'ColliderShape_ConvexMesh' shapes or 'ColliderShape_TriangleMesh' mesh shapes",
+                  "enum": [ "ColliderShape_ConvexMesh", "ColliderShape_TriangleMesh" ]
+                },
+                "isStatic": {
+                  "description": "is it static or dynamic actor",
+                  "type": "boolean"
+                },
+                "isLocked": {
+                  "description": "whether to lock linear and angular velocities of the dynamic actor",
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "filters": {
+      "description": "The predefined trait system filters",
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "traits": {
+              "description": "the associated trait types",
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "layers": {
+      "description": "the unique layers of the scene",
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "the unique name of the layer",
+              "type": "string"
+            },
+            "nodes": {
+              "description": "the nodes of the layer",
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "description": "the unique name of the node",
+                      "type": "string"
+                    },
+                    "components": {
+                      "description": "the node's attached traits",
+                      "type": "array",
+                      "uniqueItems": true,
+                      "items": [
+                        { "$ref": "#traits/Camera" },
+                        { "$ref": "#traits/Collider" },
+                        { "$ref": "#traits/MeshRenderer" },
+                        { "$ref": "#traits/Rigidbody" },
+                        { "$ref": "#traits/Script" },
+                        { "$ref": "#traits/Transform" }
+                      ]
+                    },
+                    "nodes": {
+                      "description": "the child nodes",
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,3 @@
+%CD%\PrototypeCompiler\llvm-project\build\%1\bin\clang-format.exe -style=file -i %CD%\PrototypeTraitSystem\include\PrototypeTraitSystem\PrototypeTraitSystemTypes.h
+%CD%\PrototypeCompiler\llvm-project\build\%1\bin\clang-format.exe -style=file -i %CD%\PrototypeTraitSystem\include\PrototypeTraitSystem\PrototypeTraitSystem.h
+%CD%\PrototypeCompiler\llvm-project\build\%1\bin\clang-format.exe -style=file -i %CD%\PrototypeTraitSystem\src\PrototypeTraitSystem.cpp
