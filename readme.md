@@ -1,6 +1,8 @@
 # Prototype Engine
 This is the prototype engine of my own.\
-Have fun exploring it, catch some nice snippets (or bugs) if that's your jam.
+Have fun exploring it, catch some nice snippets (or bugs) if that's your jam.\
+It's just an attempt to build a 3d engine, don't use this for production or anything like that.\
+This could be good for anyone who wants to get started.
 
 # Screenshots
 <p float="left">
@@ -97,13 +99,14 @@ Have fun exploring it, catch some nice snippets (or bugs) if that's your jam.
     cmake -DLLVM_ENABLE_PROJECTS=clang -Thost=x64 ../llvm
     cmake --build . --config Release
     ```
-4. Build all dependencies
+4. Clone all dependencies in `PrototypeDependencies/` directory
+5. Build all dependencies
     ```
     cd PrototypeDependencies/
     .\clean.cmd
     .\build.cmd
     ```
-5. Build the prototype engine and application
+6. Build the prototype engine and application
     ```
     mkdir build
     cmake -S . --preset=x64-Release
