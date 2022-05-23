@@ -6,6 +6,15 @@ This could be good for anyone who wants to get started.
 
 # Screenshots
 <p float="left">
+  <img src="screenshots/May-2022-A.png" width="100%" />
+</p>
+<p float="left">
+  <img src="screenshots/May-2022-B.png" width="100%" />
+</p>
+<p float="left">
+  <img src="screenshots/May-2022-C.png" width="100%" />
+</p>
+<p float="left">
   <img src="screenshots/ss0.png" width="100%" />
 </p>
 <p float="left">
