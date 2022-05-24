@@ -2,7 +2,9 @@
 This is the prototype engine of my own.\
 Have fun exploring it, catch some nice snippets (or bugs) if that's your jam.\
 It's just an attempt to build a 3d engine, don't use this for production or anything like that.\
-This could be good for anyone who wants to get started.
+This could be good for anyone who wants to get started.\
+I am adding more things to this repository bit by bit when I feel like they're good to go.\
+This is a toy project, nothing here is to be taken seriously.
 
 # Screenshots
 <p float="left">
@@ -74,6 +76,7 @@ This could be good for anyone who wants to get started.
 - [ImGuizmo](https://github.com/CedricGuillemet/ImGuizmo)
 - [imgui-node-editor](https://github.com/thedmd/imgui-node-editor)
 - [ImGuiColorTextEdit](https://github.com/BalazsJako/ImGuiColorTextEdit)
+- [implot](https://github.com/epezent/implot)
 - [jinja2cpp](https://github.com/jinja2cpp/Jinja2Cpp)
 - [nlohmann's json](https://github.com/nlohmann/json)
 - [opencv](https://github.com/opencv/opencv)
