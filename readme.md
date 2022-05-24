@@ -6,6 +6,9 @@ This could be good for anyone who wants to get started.\
 I am adding more things to this repository bit by bit when I feel like they're good to go.\
 This is a toy project, nothing here is to be taken seriously.
 
+# Video
+link https://www.youtube.com/watch?v=rLb0LGupltw
+
 # Screenshots
 <p float="left">
   <img src="screenshots/May-2022-A.png" width="100%" />
