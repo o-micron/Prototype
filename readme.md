@@ -51,6 +51,7 @@ link https://www.youtube.com/watch?v=rLb0LGupltw
 
 | Rendering | Support status |
 | --- | --- |
+| Metal 3 | 🚧 |
 | OpenGL 4.1 | ✔ |
 | OpenGL ES 3.0 | 🚧 |
 | Vulkan | ✔ |
@@ -63,6 +64,7 @@ link https://www.youtube.com/watch?v=rLb0LGupltw
 
 | Platform | Support status |
 | ---      | --- |
+| macOS | 🚧 |
 | Windows  | ✔ |
 | Linux    | 🚧 |
 | Emscripten | 🚧 |
